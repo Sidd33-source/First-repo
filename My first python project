@@ -1,0 +1,46 @@
+import random
+
+# Rock, Paper, Scissors Game
+print("🎮 Welcome to Rock, Paper, Scissors! 🎮")
+print("Choose your move:")
+print("1 - ✊ Rock")
+print("2 - ✋ Paper") 
+print("3 - ✌️ Scissors")
+
+# Get player's choice
+player = int(input("Enter your choice (1-3): "))
+
+# Generate computer's choice
+computer = random.randint(1, 3)
+
+# Convert numbers to emojis for display
+choices = {1: "✊", 2: "✋", 3: "✌️"}
+choice_names = {1: "Rock", 2: "Paper", 3: "Scissors"}
+
+print(f"\nYou chose: {choices[player]} {choice_names[player]}")
+print(f"Computer chose: {choices[computer]} {choice_names[computer]}")
+
+# Determine the winner using control flow
+if player == computer:
+    print("\n🤝 It's a tie!")
+elif (player == 1 and computer == 3) or \
+     (player == 2 and computer == 1) or \
+     (player == 3 and computer == 2):
+    print("\n🎉 You win!")
+else:
+    print("\n🤖 Computer wins!")
+
+# Show the rules that applied
+if player != computer:
+    if (player == 1 and computer == 3):
+        print("Rock beats Scissors!")
+    elif (player == 2 and computer == 1):
+        print("Paper beats Rock!")
+    elif (player == 3 and computer == 2):
+        print("Scissors beat Paper!")
+    elif (computer == 1 and player == 3):
+        print("Rock beats Scissors!")
+    elif (computer == 2 and player == 1):
+        print("Paper beats Rock!")
+    elif (computer == 3 and player == 2):
+        print("Scissors beat Paper!")
